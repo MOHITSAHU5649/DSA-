@@ -22,7 +22,7 @@ int binsearch(vector<int> nums, int target){
         return -1;
 }
 
-
+//2. 
 int main(){
     vector<int> arr = {1,2,3,4,5,6};
     int target = 6;
