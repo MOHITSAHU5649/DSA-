@@ -1,0 +1,104 @@
+The error message indicates that Git is stuck because a previous operation (e.g., a commit or merge) is incomplete, or a Git process is still holding a lock file. Here's how you can resolve it step-by-step:
+
+---
+
+### **Steps to Resolve**
+
+#### **1. Identify and Terminate Any Git Processes**
+- Open a terminal and check for running Git processes:
+  ```bash
+  ps aux | grep git
+  ```
+  *(On Windows, use Task Manager to locate `git.exe` processes.)*
+- Terminate any active Git processes:
+  - **Linux/Mac**:
+    ```bash
+    kill -9 <PID>
+    ```
+  - **Windows**:
+    Open Task Manager (`Ctrl + Shift + Esc`), locate `git.exe`, and select **End Task**.
+
+---
+
+#### **2. Remove the Lock File**
+A common cause of this error is the presence of a lock file in the `.git` directory. You can safely delete it:
+
+1. Navigate to your repository:
+   ```bash
+   cd /path/to/your/repository
+   ```
+
+2. Check for a lock file:
+   ```bash
+   ls -a .git
+   ```
+   Look for a file named `index.lock` or similar.
+
+3. Remove the lock file:
+   ```bash
+   rm -f .git/index.lock
+   ```
+   *(On Windows, use File Explorer to delete `.git/index.lock` manually.)*
+
+---
+
+#### **3. Restart the Git Command**
+Try running your Git command again, e.g.:
+```bash
+git commit
+```
+
+---
+
+#### **4. Complete or Abort Stalled Git Operations**
+If the issue persists, a previous Git operation may have been interrupted (e.g., a merge or commit). Complete or abort it:
+
+1. **Check Git Status**:
+   ```bash
+   git status
+   ```
+   This will show if there are incomplete operations.
+
+2. **Abort an Interrupted Commit**:
+   If a commit was interrupted, run:
+   ```bash
+   git commit --abort
+   ```
+
+3. **Abort an Interrupted Merge**:
+   If a merge is stuck:
+   ```bash
+   git merge --abort
+   ```
+
+4. **Abort a Rebase**:
+   If a rebase was in progress:
+   ```bash
+   git rebase --abort
+   ```
+
+---
+
+#### **5. Clean Up Stale Processes in VS Code**
+If you’re using VS Code, restart the editor. Sometimes, it retains stale Git processes. Ensure no pending Git operations are active in the **Source Control** tab.
+
+---
+
+#### **6. Ensure Correct Permissions (Optional)**
+If you’re working in a shared repository or environment, incorrect permissions may cause issues:
+- Set the correct permissions for the `.git` directory:
+  ```bash
+  chmod -R u+rw .git
+  ```
+
+---
+
+### **Verify Resolution**
+After following these steps, verify everything is working:
+- Run:
+  ```bash
+  git status
+  ```
+- If it shows a clean state or files ready to stage/commit, the issue is resolved.
+
+Let me know if you face any further issues!
