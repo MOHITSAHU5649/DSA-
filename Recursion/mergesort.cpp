@@ -38,6 +38,36 @@ void merge(vector<int> &arr, int start, int end, int mid){ // fun to merge the e
     
 }
 
+void anotmerge(int arr[],int start, int end, int mid){
+    vector<int> tempp(end-start+1);
+    int left = start, right = mid+1, index =0;
+
+    while(left<=mid && right <= end){
+        if(arr[left] <= arr[right]){
+            tempp[index] = arr[left];
+            index++, left++;
+        }else{
+            tempp[index] = arr[right];
+            index++, right++;
+        }
+    }
+
+    while(left <= mid){
+        tempp[index] = arr[left];
+        index++, left++;
+    }
+
+    while(right <= end){
+     tempp[index] <= arr[right];
+     right++, index++;
+    }
+    index =0;
+    while(start <= end){
+        arr[start] = tempp[index];
+        start++, index++;
+    }
+}
+
 void mergesort(vector<int> &arr, int start, int end){ // recursion to find the mid and divide the array 
     if(start<end){
         int mid = start +(end -start)/2;

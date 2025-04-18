@@ -45,7 +45,7 @@ class solution{
         while(oldtemp != NULL){
             newtemp->random = m[oldtemp->random];
             oldtemp = oldtemp->next;
-            newtemp newtemp->next;
+            newtemp = newtemp->next;
         }
         return newhead;
     }

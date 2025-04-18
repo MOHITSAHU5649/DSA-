@@ -29,6 +29,8 @@ void push_front(int val){
     }
 }
 
+
+
 void printall(){
     Node* temp = head;
     while(temp != NULL){
@@ -37,6 +39,9 @@ void printall(){
     }cout<<endl;
 }
 
+void push_back(int val){
+    
+}
 
 };
 
