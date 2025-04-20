@@ -20,9 +20,9 @@ void getper (vector<int> &nums, int i , vector<vector<int>> &ans){
 
     }
 
-    vector<vector<int>> permute(vector<int>& nums) {
+vector<vector<int>> permute(vector<int>& nums) {
         vector<vector<int>> ans ;
-        getper(nums, 0,ans);
+        getper(nums,0,ans);
         return ans;
     }
 

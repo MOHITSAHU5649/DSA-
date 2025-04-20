@@ -44,7 +44,7 @@ allsub2(nums,ans,i+1,all);
 
 ans.pop_back();
 int idx =i+1;
-while(idx < nums.size() && nums[idx] == nums[idx-1]){
+while(idx < nums.size() && nums[idx] == nums[idx-1]){ // here we are chceking ans skippig the exclusionn for he same element
     idx++;
 }
 allsub2(nums,ans,idx,all);
@@ -54,7 +54,7 @@ return;
 
 }
 
-    vector<vector<int>> subsetsWithDup(vector<int>& nums) {
+vector<vector<int>> subsetsWithDup(vector<int>& nums) {
         sort(nums.begin(),nums.end()); 
         vector<vector<int>> all;
     vector<int> ans;
@@ -63,6 +63,9 @@ return;
     return all;
        
     }
+
+
+
 int main(){
     vector<int> nums = {1,2,3};
     vector<int> nums1 = {1,2,2};
