@@ -28,7 +28,7 @@ class doublell{
 
 
 
-
+// this i sthe main logic 
 
 Node* flatten(Node* head) {
             if(head == NULL){
