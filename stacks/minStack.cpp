@@ -50,6 +50,7 @@ stack<long long int> s;
 // this is approach one where we use the pair 
  stack<pair<int,int>> s;
     void push(int val) {
+        
         if(s.empty()){
             s.push({val,val});
         }else{
