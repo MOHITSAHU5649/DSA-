@@ -1,5 +1,6 @@
 #include<iostream>
-#include<queue>
+#include<queue> // 2. using the stl method
+#include<deque>//double ended queue push from back and front  
 using namespace std;
 
 //1. using linklist 
