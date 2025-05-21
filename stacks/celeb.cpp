@@ -1,5 +1,5 @@
 // this is the clebrity problem in which we have to find out whiuch is the celebrity whcih is known by everyone but he doesnot knoe anyone \
-
+ 
 
 
 #include<iostream>
