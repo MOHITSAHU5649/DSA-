@@ -6,13 +6,15 @@ using namespace std;
 int sum(int matrix[][4], int n){
     int sum =0;
     for(int i =0;i<n;i++){
-        sum += matrix[i][i];
+     sum += matrix[i][i]; // primary diagonal ka sum 
     
     if(i != n-1-i){
-        sum += matrix[i][n-1-i];
+        sum += matrix[i][n-1-i]; // secondary daiagonalka sum jisme centre ellement ki do occurence nahi lete kebil ek hi lete hai 
     }
     }
     return sum ;
+
+// for finding the centere index xjust use (n/2,n/2)
 
 }
 

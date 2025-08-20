@@ -12,17 +12,17 @@ vector<int> mr(vector<vector<int>>& grid) {
         int expectedsum =0, actualsum =0;
         for(int i =0;i<n;i++){
             for(int j = 0; j<n;j++){
-                actualsum += grid[i][j];
-        if(m.find(grid[i][j]) != m.end()){
+                actualsum += grid[i][j]; // calcualte the actual sum 
+        if(m.find(grid[i][j]) != m.end()){ // cehckif the number in the set or not if yes then it is the repeated nu,ber 
                 a = grid[i][j];
                 ans.push_back(a);
         }
-        m.insert(grid[i][j]);
+        m.insert(grid[i][j]); // if not in the set keep in the set so that it willbe check inth enext turn 
         }
         }
 
-        expectedsum = (n*n) * (n*n + 1)/2;
-        b = expectedsum +a- actualsum;
+        expectedsum = (n*n) * (n*n + 1)/2; // calcualte the actaul sum 
+        b = expectedsum +a- actualsum; // 
         ans.push_back(b);
         return ans;
     }

@@ -9,18 +9,18 @@ int duplicate(vector<int> &arr){
     unordered_set<int> m;
 
     for(int val : arr){
-        if(m.find(val) != m.end()){
+        if(m.find(val) != m.end()){ // if already exist the number then it is the dulicate number 
             return val;
         }
 
-        m.insert(val);
+        m.insert(val); // agar nahi hai to daal do 
     }
     return -1;
 }
 
 //2. slow fast approach
 int dup(vector<int> &arr){
-    int slow =arr[0], fast = arr[0];
+    int slow =arr[0], fast = arr[0]; // slow or fast ko declare karo 
 
     do
     {
@@ -28,7 +28,7 @@ int dup(vector<int> &arr){
         fast = arr[arr[fast]];
     } while (slow != fast);
 
-    slow = arr[0];
+    slow = arr[0];// jaise he slow fast ek hote hai to slow ko wapas 0 pe le 
 
     while(slow != fast){
         slow = arr[slow];

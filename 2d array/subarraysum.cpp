@@ -2,7 +2,7 @@
 #include<iostream>
 #include<vector>
 #include<unordered_map>
-#include "subarraysum.h"
+//#include "subarraysum.h"
 using namespace std;
 
 
@@ -32,22 +32,22 @@ int subarraySum(vector<int>& nums, int k) {
         pre[0] = nums[0];
 
         for(int i =1;i<n;i++){
-            pre[i] = pre[i-1] + nums[i];
+            pre[i] = pre[i-1] + nums[i]; // calcualte the prefic sum of the array 
         }
 
         unordered_map <int,int> m;
         for(int j = 0;j<n;j++){
-            if(pre[j] == k) count++;
+            if(pre[j] == k) count++; // check if the prefix sum at atht index is same 
 
 // this lines is the core of unordered map
-            int val = pre[j] - k;
+            int val = pre[j] - k; // if not smase then find the val , and search it in the map 
             if(m.find(val) != m.end()){
                 count += m[val];
             }
-            if(m.find(pre[j]) == m.end()){
+            if(m.find(pre[j]) == m.end()){ // if not present i n the map then put ir 
                 m[pre[j]] = 0;
             }
-                m[pre[j]]++;
+                m[pre[j]]++;  // ha arhwa nahi hai agar wo val aayi hai to uski frewurncy bada do 
 
 
         }

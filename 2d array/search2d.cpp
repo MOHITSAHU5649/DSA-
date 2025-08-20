@@ -27,12 +27,12 @@ bool isfound(vector<vector<int>> &matrix, int midrow, int target){
 
 bool search(vector<vector<int>> &matrix, int target){
     int m = matrix.size(), n = matrix[0].size();
-    int srow =0, erow =m-1;
+    int srow =0, erow =m-1; // start row and end column 
 
     while(srow <= erow){
-        int midrow = srow +(erow-srow)/2;
-        if(target >= matrix[midrow][0] && target <= matrix[midrow][n-1]){
-            return isfound(matrix,midrow,target);
+        int midrow = srow +(erow-srow)/2; // fin sth mid row in ehich answer can be possible 
+        if(target >= matrix[midrow][0] && target <= matrix[midrow][n-1]){ // if naswers in that mid row 
+            return isfound(matrix,midrow,target); // apply binary serach on it and find the tarfet 
         }
 
         if(target <matrix[midrow][0]){
@@ -48,10 +48,10 @@ bool search(vector<vector<int>> &matrix, int target){
 
 // this is second orr anothe varitaion 
 bool search2(vector<vector<int>> &mat, int target){
-    int m =mat.size(),n = mat[0].size();
+    int m =mat.size(),n = mat[0].size();// size
 
-    int s = 0, e = n-1;
-    while(s < m && e >= 0){
+    int s = 0, e = n-1; // start row and end column
+    while(s < m && e >= 0){ // 
         if(target == mat[s][e]){
             return true;
         }

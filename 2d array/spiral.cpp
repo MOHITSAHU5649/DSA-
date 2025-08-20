@@ -9,18 +9,18 @@ vector<int> spiral(vector<vector<int>> &mat){
     vector<int> ans;
 
     while(srow <= erow && scol <= ecol){
-        for (int i = scol; i <= ecol; i++)
+        for (int i = scol; i <= ecol; i++) // traverse the whiole row top
         {
             ans.push_back(mat[srow][i]);
         }
 
-        for (int j = srow+1; j <= erow; j++)
+        for (int j = srow+1; j <= erow; j++) // tracvers the colum right 
         {
             ans.push_back(mat[j][ecol]);        }
         
-        for (int k = ecol-1; k >= scol; k--)
+        for (int k = ecol-1; k >= scol; k--) // traverst he botton row 
         {
-            if(srow == erow){
+            if(srow == erow){  // break if theat row been already traversed by the top layer this hapens in the caseof the of matric 
                 break;
             }
             ans.push_back(mat[erow][k]);

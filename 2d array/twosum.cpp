@@ -12,12 +12,12 @@ vector<int> twosum(vector<int>&arr, int target){
         int start = arr[i];
         int second = target - start;
 
-        if(n.find(second) != n.end()){
+        if(n.find(second) != n.end()){ // agar mila to uska index le lo or secind wale ka idex le lo 
             ans.push_back(i);
-            ans.push_back(n[second]);
+            ans.push_back(n[second]); // agar map me hai to us second ka index kitna hai 
             
         }
-        n[start] = i;
+        n[start] = i; // agar nahi that o ab use add kardo with respect to its index
     }
     return ans;
     
