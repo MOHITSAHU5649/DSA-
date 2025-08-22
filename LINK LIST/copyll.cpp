@@ -19,35 +19,35 @@ class solution{
     Node* head = NULL;
 
 // this is the main logic
-    Node* copyrl(Node* head){
+    Node* copyrl(Node* head){ // if linklist is empty then return 
         if(head == NULL){
             return NULL;
         }
 
-        unordered_map<Node*,Node*> m;
-        Node* newhead = new Node(head->val);
-        Node* oldtemp = head->next;
-        Node* newtemp = newhead;
-        m[head] = newhead;
+        unordered_map<Node*,Node*> m; // cerat a map to store the randp, of bothe the new and the old list 
+        Node* newhead = new Node(head->data); // create a new head witht he data of the old ehad 
+        Node* oldtemp = head->next; // oldtemp ko start kare 2 post se becuase pehel to ban chuka upar 
+        Node* newtemp = newhead; // newtemp pointer banaya hai new heasd se start kiya new list ko 
+        m[head] = newhead; // head ko map me store kar siya hai 
 
         while(oldtemp != NULL){
-            Node* copynode = new Node(oldtemp->val);
-            m[oldtemp] = copynode;
-            newtemp->next = copynode;
+            Node* copynode = new Node(oldtemp->data); // new node with old  node data 
+            m[oldtemp] = copynode; // map kiya old node with ne node data 
+            newtemp->next = copynode; // 
 
             oldtemp = oldtemp->next;
             newtemp = newtemp->next;
         }
 
-        oldtemp = head;
+        oldtemp = head; //  jab sab map ho jaye or a new ban list ban jaye to ab usko fir se head pe le aayo 
         newtemp = newhead;
 
         while(oldtemp != NULL){
-            newtemp->random = m[oldtemp->random];
+            newtemp->random = m[oldtemp->random]; // old ke random ko dhundo or for usko new ke sarh attach kar do 
             oldtemp = oldtemp->next;
             newtemp = newtemp->next;
         }
-        return newhead;
+        return newhead; // new list ka ehad return kar do 
     }
 };
 

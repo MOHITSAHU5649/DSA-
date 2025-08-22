@@ -73,20 +73,20 @@ class list{
     }
 
     void insertmid(int val,int pos){
-        if(pos<0) return;
+        if(pos<0) return; // check if the numebr is lees that zero 
 
-        if(pos == 0){
+        if(pos == 0){ // if the list is empty then add it in the first position 
             push_front(val);
             return;
         }
 
-        Node* newnode = new Node(val);
-        Node* temp = start;
-        for(int i =0;i<pos-1;i++){
-            temp = temp->next;
+        Node* newnode = new Node(val); // created a new node 
+        Node* temp = start; // a temp variable to store the start node 
+        for(int i =0;i<pos-1;i++){ // traverset to the previosu of the postiton 
+            temp = temp->next; // tatke the temp to the n-1
         }
 
-        newnode->next = temp->next;
+        newnode->next = temp->next; 
         temp->next = newnode;
 
     }
@@ -127,7 +127,7 @@ class list{
 
     void printele(){
         Node* temp = start;
-        while (temp != NULL)
+        while (temp != NULL) // we cannot tatek the start ot eh end because for the next other operation the postion of the ater will be change 
         {
             cout<<temp->data<<" -> ";
             temp = temp->next;

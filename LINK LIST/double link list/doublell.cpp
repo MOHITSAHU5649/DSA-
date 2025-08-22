@@ -59,7 +59,7 @@ void pop_front(){
 
     if(head != NULL){
         head->prev = NULL;
-    };
+    }
 
     temp->next = NULL;
     delete temp;
