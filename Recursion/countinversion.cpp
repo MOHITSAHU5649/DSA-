@@ -64,7 +64,7 @@ int mergesort(vector<int> &arr, int st, int end){
         int inv = merge(arr,st,mid,end);
 
         return left + right + inv;
-    }
+    } 
     return 0;
 }
 

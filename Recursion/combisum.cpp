@@ -20,10 +20,10 @@ using namespace std;
         }
 
         combi.push_back(arr[index]);
-        findall(arr,index+1,target- arr[index],combi,ans);
-        findall(arr,index,target- arr[index],combi,ans);
-        combi.pop_back();//exclude backtrack
-        findall(arr,index+1,target,combi,ans);
+        findall(arr,index+1,target- arr[index],combi,ans); // combination hwere a numbner come only onece
+        findall(arr,index,target- arr[index],combi,ans); // this is for the multiple conbinatoion of a single numer 
+        combi.pop_back();//exclude backtrack 
+        findall(arr,index+1,target,combi,ans); // this helps to exclude 
 
     }
 

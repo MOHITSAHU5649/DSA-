@@ -29,7 +29,8 @@ int row, int col, string path,vector<string> &ans){ //,vector<vector<string>> &a
 vector<string> findpath(vector<vector<int>> &mat){
     vector<string> ans;
     string path = "";
-    // vector<vector<string>> another(n,vector<bool>(n,false));
+    // this helps us to identify that the path is already traversed or not
+    // vector<vector<string>> another(n,vector<bool>(n,false)); 
     helper(mat,0,0,path,ans);
     return ans;
 }

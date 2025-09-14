@@ -6,7 +6,7 @@ using namespace std;
         int st = 0, end = nums.size() - 1; // Fix: Initialize end as nums.size() - 1
         while (st <= end) {
             int mid = st + (end - st) / 2; // Calculate mid safely
-
+                cout<<mid;
             // Check if mid is the target
             if (nums[mid] == target) {
                 return mid;
@@ -34,7 +34,7 @@ using namespace std;
 
     int main(){
         cout<<"This is the search in rotated sorted array";
-        int targert = 5;
+        int targert = 6;
         vector<int> nums = { 6,7,0,1,2,3,4,5};
 
         cout<<search(nums,targert);
