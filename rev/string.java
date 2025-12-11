@@ -1,4 +1,4 @@
-import java.util.*;
+
 public class string
 {
     public static boolean isString(char s){
