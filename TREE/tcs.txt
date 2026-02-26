@@ -1,0 +1,14 @@
+this is the tcs tree mai topics 
+1. daimeter 
+2.kth level
+3. binary tree paths
+4. binary search tree 
+5. lowerst common ancestor 
+
+other palce prerp 
+1. top view 
+2. build tree using preorder and inorder 
+3. sorted array to balanced tree
+4. valid binary tree 
+5. kth smallest 
+6. precedence ans successor 
